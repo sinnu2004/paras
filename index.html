@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Placeholder Studio — Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- SPLASH / INTRO OVERLAY -->
+  <div id="intro-overlay" class="intro-overlay" aria-hidden="false">
+    <div class="intro-content" role="dialog" aria-label="Intro">
+      <h1 id="company-name" class="company-name">Paras Studio</h1>
+      <p id="company-slogan" class="company-slogan">Bringing Unreal Imagination to Life</p>
+      <button id="enter-btn" class="enter-btn hidden" aria-label="Enter site">Enter</button>
+    </div>
+  </div>
+
+  <!-- MAIN SITE -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-left">Paras Studio</div>
+      <nav class="nav" aria-label="Main navigation">
+        <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html"><button class="contact-btn">Contact Me</button></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content hidden">
+    <section class="hero">
+      <div class="hero-media" id="hero-media">
+        <video id="hero-video" class="hero-video" playsinline muted preload="auto" poster="assets/images/image.png">
+          <source src="assets/video/WhatsApp Video 2025-10-15 at 15.26.45_164f07d7.mp4" type="video/mp4" />
+        </video>
+        <div id="hero-fallback" class="hero-fallback" aria-hidden="true" style="background-image: url('assets/images/image.png');"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-left">
+          <h2 class="roles">
+            <span>3D Animator</span>
+            <span>Unreal Artist</span>
+          </h2>
+        </div>
+
+        <div class="hero-right">
+          <p class="bio">
+            Hi — I'm an Unreal Engine animator focused on cinematic visuals, real-time VFX and photoreal environments.
+            I craft short films, showreels and interactive experiences that highlight storytelling through motion.
+          </p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="projects.html">Projects</a>
+            <a class="btn btn-outline" href="projects.html#showreel">Showreel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/common-nav.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
