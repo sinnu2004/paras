@@ -1,0 +1,42 @@
+/*
+  # -------------------------------------------------------------------
+  # 🔒 Security & Performance Headers for Parax 3D Portfolio
+  # -------------------------------------------------------------------
+
+  # 🧠 Content Security Policy (CSP)
+  # Restricts which sources can load resources (scripts, styles, media)
+  Content-Security-Policy: default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    media-src 'self' blob:;
+    font-src 'self';
+    object-src 'none';
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+
+  # 🛡️ Prevent Clickjacking
+  X-Frame-Options: DENY
+
+  # 🧱 Prevent MIME-type sniffing
+  X-Content-Type-Options: nosniff
+
+  # 🕵️ Hide internal referrer data
+  Referrer-Policy: no-referrer-when-downgrade
+
+  # 🚫 Disable old browser caching (important for portfolio updates)
+  Cache-Control: no-store, no-cache, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+  # 🔐 Enforce HTTPS and secure connections
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # 🧾 Remove server identification (extra privacy)
+  Server: SecureServer
+
+  # 🧩 Allow only your local media and files
+  Cross-Origin-Resource-Policy: same-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
