@@ -1,0 +1,10 @@
+# ------------------------------------------------------------
+# 🔄 Clean URLs & Routing Rules
+# ------------------------------------------------------------
+
+/projects    /projects.html    200
+/about       /about.html       200
+/contact     /contact.html     200
+
+# Custom 404 fallback
+/*           /index.html       404
