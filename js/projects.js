@@ -53,13 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // const projectvideo = video.getAttribute('data-src');
-    // console.log(projectvideo);
-    // // See project button — placeholder action
-    // seeBtn?.addEventListener('click', (e) => {
-    //   e.preventDefault();
-    //   const title = item.dataset.title || 'Project';
-    //   window.location.href = 'http://localhost:5500/assets/video/hero-video.mp4';
-    // });
   });
 });

@@ -1,6 +1,5 @@
-/* style.css - Global styles, layout, video transitions and responsiveness */
 
-/* Reset / basic */
+/* basic */
 :root{
   --max-width: 1200px;
   --accent: #ffffff;
@@ -8,6 +7,8 @@
   --bg: #0b0b0b;
   --card-bg: rgba(255,255,255,0.03);
 }
+
+/* global style */
 
 *{
   margin: 0;
@@ -30,7 +31,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ---------- Intro overlay ---------- */
+/* Intro overlay */
 .intro-overlay{
   position:fixed;
   inset:0;
@@ -55,8 +56,11 @@ body{
 
 .company-name{ 
   font-size:clamp(2.2rem,5vw,4rem); 
+
   margin:0 0 .5rem; 
   letter-spacing:1px; 
+  filter: drop-shadow(0px 0px 5px white);
+  color: #000;
   transition: all 4s ease-in-out;
 }
 
@@ -106,7 +110,7 @@ body{
   outline:2px solid rgba(255,255,255,0.08);
 }
 
-/* ---------- Header ---------- */
+/*  Header */
 
 header {
   position: relative;
@@ -129,9 +133,11 @@ header {
   align-items:center;
   justify-content:space-between;
 }
-.logo-left, .logo-center{ 
-  font-weight:600; 
+.logo-left{ 
+  font-weight:800; 
   letter-spacing:0.6px; 
+  filter: drop-shadow(0px 0px 5px white);
+  color: #2e2929;
 }
 
 .center-logo .logo-center{ 
@@ -182,7 +188,6 @@ header {
   height: 50px;
   border-radius: 25px;
   width: 150px;
-  /* background: transparent; */
   border: 1px solid black;
   background-color: #221f1ffd;
   font-weight: 900;
@@ -191,7 +196,7 @@ header {
   filter: drop-shadow(0px 0px 2px white);
 }
 
-/* ---------- Main / Hero ---------- */
+/*  Main / Hero  */
 .main-content{ 
   width: 100%;
   background-color: #363636;
@@ -235,7 +240,7 @@ header {
 .hero-video.played{ 
   opacity:0; 
   pointer-events:none; 
-} /* when ended, hide video; show fallback */
+} 
 .hero-video{ 
   opacity:1; 
 }
@@ -309,7 +314,7 @@ header {
   color:var(--accent) 
 }
 
-/* ---------- Projects grid ---------- */
+/* Projects grid  */
 .projects-grid {
   padding-top: 25px;
   display: grid;
@@ -481,7 +486,6 @@ header {
   grid-template-columns: repeat(2,1fr);
   width: 60%;
   gap: 12rem;
-  /* margin-top: 5rem; */
 }
 
 .about-img-container {
@@ -502,7 +506,6 @@ header {
 .about-img {
   height: 200px;
   width: 200px;
-  /* margin-bottom: 1.4rem; */
   filter: drop-shadow(0px 0px 10px white);
   
 }
@@ -523,7 +526,6 @@ header {
   height: 80px;
   background-color: #2e2929b0;
   align-content: center;
-  /* margin-bottom: 25px; */
 }
 
 /* skill container */ 
@@ -723,7 +725,7 @@ header {
   width: 100px;
 }
 
-/* ---------- Utilities ---------- */
+/* Utilities */
 .hidden{ 
   display:none !important; 
 }
@@ -731,7 +733,7 @@ header {
   text-align:center; 
 }
 
-/* ---------- Media Queries ---------- */
+/*  Media Queries */
 @media (max-width: 360px){
   * {
     margin: 0;
@@ -917,7 +919,7 @@ header {
   }
 }
 
-/* ---------- 📏 Small phones: up to 480px ---------- */
+/*  Small phones: up to 480px */
 @media (max-width: 480px) {
   .site-header {
     height: 70px;
@@ -947,20 +949,43 @@ header {
     grid-template-columns: 1fr;
   }
 
+  .nav-links{ 
+    display:none; 
+    position:absolute; 
+    right:0; 
+    top:100%; 
+    background:rgba(0,0,0,0.9); 
+    padding:0.75rem; 
+    border-radius:8px; 
+    flex-direction:column; 
+    min-width:160px; 
+  }
+  .hamburger{ 
+    display:inline-block; 
+  }
+  .nav-links.show{ 
+    display:flex; 
+  }
+
   .about-container {
-    grid-template-columns: 1fr;
-    width: 90%;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .about-img-container {
-    height: 180px;
-    width: 180px;
+    height: 200px;
+    width: 200px;
   }
 
   .about-content p {
     width: 90%;
     margin-left: 5%;
+  }
+
+  .skill-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .contact-content {
@@ -969,7 +994,7 @@ header {
   }
 }
 
-/* ---------- 📲 Medium devices: up to 768px (tablets) ---------- */
+/* Medium devices: up to 768px (tablets)*/
 @media (max-width: 768px) {
   .site-header {
     height: 75px;
@@ -1026,88 +1051,5 @@ header {
 
   .nav-links.show {
     display: flex;
-  }
-}
-
-/* ---------- 💻 Laptops: up to 1024px ---------- */
-@media (max-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .hero-left {
-    margin-top: 100px;
-  }
-
-  .hero-right {
-    margin-top: 80px;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-container {
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
-    gap: 4rem;
-  }
-
-  .software-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .contact-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ---------- 🖥️ Desktops: up to 1440px ---------- */
-@media (max-width: 1440px) {
-  .hero-video {
-    height: 600px;
-  }
-
-  .hero-content {
-    gap: 60px;
-  }
-
-  .about-container {
-    width: 70%;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ---------- 🖥️💨 Large / Ultra-wide screens (above 1440px) ---------- */
-@media (min-width: 1441px) {
-  .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .about-container {
-    width: 60%;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .software-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .contact-content {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

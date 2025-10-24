@@ -1,4 +1,4 @@
-// common-nav.js - shared navigation + hamburger behavior on all pages
+
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButtons = document.querySelectorAll('.hamburger');
   hamburgerButtons.forEach(btn => {

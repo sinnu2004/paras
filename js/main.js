@@ -1,4 +1,4 @@
-// main.js — fixed autoplay timing for hero video + splash behavior
+
 document.addEventListener("DOMContentLoaded", () => {
   const introOverlay = document.getElementById("intro-overlay");
   const enterBtn = document.getElementById("enter-btn");
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     enterBtn.focus();
   }
 
-  // 🧠 Robust autoplay helper
+  // Robust autoplay helper
   async function playHeroVideo() {
     if (!heroVideo) return;
 
-    // Make absolutely sure video attributes are correct
+
     heroVideo.muted = true;
     heroVideo.playsInline = true;
     heroVideo.autoplay = true;
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 💡 If intro already shown this session
+  // If intro already shown this session
   if (introShown) {
     introOverlay.classList.add("hidden");
     introOverlay.setAttribute("aria-hidden", "true");
