@@ -23,7 +23,7 @@
   X-Content-Type-Options: nosniff
 
   # 🕵️ Hide internal referrer data
-  Referrer-Policy: no-referrer-when-downgrade
+  Referrer-Policy: strict-origin-when-cross-origin
 
   # 🚫 Disable old browser caching (important for portfolio updates)
   Cache-Control: no-store, no-cache, must-revalidate

@@ -6,7 +6,13 @@
   publish = "."
   command = ""
 
-# Optional: redirect all clean URLs to HTML pages
+# ✅ Redirects
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/projects"
   to = "/projects.html"
@@ -22,20 +28,21 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 404
+  status = 200  # ✅ Changed from 404 to 200
 
-# Security headers applied globally
+# ✅ Security headers
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
+    Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; frame-ancestors 'none'; object-src 'none';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; font-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
     Cross-Origin-Resource-Policy = "same-origin"
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Embedder-Policy = "require-corp"
     Cache-Control = "no-store, no-cache, must-revalidate"
     Pragma = "no-cache"
     Expires = "0"
+    Server = "SecureServer"
