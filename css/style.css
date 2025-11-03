@@ -1007,13 +1007,13 @@ header {
 /* Medium devices: up to 768px (tablets)*/
 @media (max-width: 768px) {
   .site-header {
-    height: 125px;
+    height: 70px;
   }
 
   .hero-content {
     grid-template-columns: 2fr;
-    text-align: center;
-    gap: 30px;
+    /* text-align: center; */
+    gap: 20px;
   }
 
   .hero-left,
@@ -1023,7 +1023,7 @@ header {
     padding: 0;
   }
   .hero-video {
-    height: 700px;
+    height: 500px;
   }
   .projects-grid {
     grid-template-columns: 1fr;
@@ -1048,7 +1048,24 @@ header {
     display: inline-flex;
   }
 
-  .nav-links {
-    display: inline-flex;
+  .nav-links{ 
+    display:none; 
+    position:absolute; 
+    right:0; 
+    top:100%; 
+    background:rgba(0,0,0,0.9); 
+    padding:0.75rem; 
+    border-radius:8px; 
+    flex-direction:column; 
+    min-width:160px; 
+  }
+  .hamburger{ 
+    display:inline-block; 
+  }
+  .nav-links.show{ 
+    display:flex; 
+  }
+  #index-footer {
+    height: 80px;
   }
 }
